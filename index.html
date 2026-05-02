@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan Computer Anudeshak Syllabus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5; /* Indigo */
+            --secondary-color: #ec4899; /* Pink */
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --header-bg: #f8fafc;
+            --highlight-bg: #fef08a;
+            --highlight-text: #854d0e;
+            --note-bg: #e0e7ff;
+            --note-border: #a5b4fc;
+        }
+
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --primary-color: #818cf8;
+            --secondary-color: #f472b6;
+            --bg-color: #111827;
+            --text-color: #f9fafb;
+            --card-bg: #1f2937;
+            --border-color: #374151;
+            --header-bg: #1e293b;
+            --highlight-bg: #78350f;
+            --highlight-text: #fde68a;
+            --note-bg: #312e81;
+            --note-border: #4f46e5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+            /* Subtle dotted pattern */
+            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        /* Styling for Notes */
+        .note {
+            background-color: var(--note-bg);
+            border-left: 5px solid var(--note-border);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .note strong {
+            color: var(--primary-color);
+        }
+
+        /* Highlights */
+        mark {
+            background-color: var(--highlight-bg);
+            color: var(--highlight-text);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* Static Card Styles */
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .topic-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .topic-header {
+            width: 100%;
+            text-align: left;
+            padding: 1rem 1.5rem;
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .topic-body {
+            padding: 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        button.action-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        button.action-btn:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* Subpart Header */
+        .subpart-header {
+            background: rgba(79, 70, 229, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin: 2rem 0 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+            .topic-header, .topic-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Rajasthan Computer Anudeshak Syllabus</h1>
+        <p>Comprehensive Study Guide & Topic Breakdown</p>
+    </header>
+
+    <div class="controls">
+        <button class="action-btn" id="theme-btn">Toggle Dark Mode</button>
+    </div>
+
+    <div class="note">
+        <strong>📝 Note:</strong> This syllabus is divided into two primary papers. <mark>Paper I</mark> covers general awareness, history, and reasoning, while <mark>Paper II</mark> is highly focused on technical knowledge, pedagogy, and computer science concepts. Pay special attention to the highlighted high-scoring sections.
+    </div>
+
+    <!-- PAPER I SECTION -->
+    <section>
+        <h2>Paper I (<mark>100 Marks</mark>)</h2>
+        <div class="topic-list">
+            
+            <div class="topic-card">
+                <h3 class="topic-header">1. Art & Culture of Rajasthan</h3>
+                <div class="topic-body">
+                    <p>This section tests knowledge of Rajasthan's rich heritage.</p>
+                    <ul>
+                        <li><strong>Architecture:</strong> Forts, Palaces, Temples, Havelis, and Cenotaphs (Chhatris).</li>
+                        <li><strong>Visual Arts:</strong> Paintings (Schools like Mewar, Marwar, Bundi, Kishangarh), Sculptures, and Handicrafts (Blue Pottery, Bandhej).</li>
+                        <li><strong>Performing Arts:</strong> Folk Dances (Ghoomar, Kalbeliya, Kachhi Ghodi), Classical Music (Gharanas), and Folk Music instruments.</li>
+                        <li><strong>Literature:</strong> Major dialects (Dingal, Pingal), Rajasthani literature, and folk tales.</li>
+                        <li><strong>Religion & Society:</strong> Folk Deities (Lok Devta & Deviyan), Saints (Dadu Dayal, Mira Bai), Religious Movements, Fairs (Pushkar, Khatu Shyam), and Festivals.</li>
+                        <li><strong>Customs:</strong> Attire, Jewelry, and Social Traditions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">2. History of Rajasthan</h3>
+                <div class="topic-body">
+                    <p>Focuses on the state's historical evolution.</p>
+                    <ul>
+                        <li><strong>Ancient Civilizations:</strong> Kalibangan, Ahar, Ganeshwar, Balathal.</li>
+                        <li><strong>Major Dynasties:</strong> History of Guhil (Mewar), Rathore (Marwar/Bikaner), Chauhan (Ajmer/Ranthambore), and Kachwaha (Jaipur).</li>
+                        <li><strong>Resistance & Freedom Movement:</strong> 1857 Revolution, Peasant Movements (Bijolia, Bengu), Tribal Movements, and Prajamandal Movements.</li>
+                        <li><strong>Integration:</strong> Stages of the unification of Rajasthan (1948-1956).</li>
+                        <li><strong>Personalities:</strong> Prominent freedom fighters and historical figures.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">3. Geography of Rajasthan</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Physical Divisions:</strong> Western Sandy Plain (Thar Desert), Aravalli Range, Eastern Plains, South-Eastern Plateau (Hadoti).</li>
+                        <li><strong>Climate:</strong> Agro-climatic zones, Rainfall distribution, Seasons.</li>
+                        <li><strong>Drainage System:</strong> Rivers (Luni, Chambal, Banas, Mahi), Lakes, and Dam projects.</li>
+                        <li><strong>Natural Resources:</strong> Soil types, Natural Vegetation (Forests), Wildlife Sanctuaries & National Parks.</li>
+                        <li><strong>Economic Resources:</strong> Minerals, Agriculture (Rabi & Kharif), Livestock, and Major Industries.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">4. General Science</h3>
+                <div class="topic-body">
+                    <p>Tests basic scientific understanding (e.g., chemical formulas like H<sub>2</sub>O or CO<sub>2</sub>, and basic physical laws).</p>
+                    <ul>
+                        <li><strong>Physics/Chemistry/Biology:</strong> Everyday science concepts.</li>
+                        <li><strong>Environment:</strong> Pollution, Ecosystem, Biodiversity, and Environmental Protection.</li>
+                        <li><strong>Energy:</strong> Renewable (Solar, Wind) and Non-Renewable energy sources in Rajasthan.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">5. Current Affairs</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>State Level:</strong> Major government schemes (Chiranjeevi, Indira Rasoi), State Budget highlights, and new policies.</li>
+                        <li><strong>National & International:</strong> Major events affecting Rajasthan, Sports, and Awards.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">6. General Ability & Reasoning (<mark>Class X Level</mark>)</h3>
+                <div class="topic-body">
+                    <p><strong>Note:</strong> This section is high-scoring if practiced well.</p>
+                    <ul>
+                        <li><strong>Logical Reasoning:</strong> Blood Relations, Coding-Decoding, Directions, Series Completion, Analogy, Classification.</li>
+                        <li><strong>Analytical Ability:</strong> Venn Diagrams, Syllogisms, Statement & Assumptions/Conclusions.</li>
+                        <li><strong>Decision Making:</strong> Problem-solving scenarios.</li>
+                        <li><strong>Data Interpretation:</strong> Charts (Bar, Pie, Line), Graphs & Tables, Data Sufficiency.</li>
+                        <li><strong>Basic Numeracy:</strong> Number System, Percentages, Ratio & Proportion, Averages, Profit & Loss, Simple & Compound Interest, Time & Work, Time, Speed & Distance.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PAPER II SECTION -->
+    <section>
+        <h2>Paper II</h2>
+        
+        <div class="subpart-header">Part A: Pedagogy & Mental Ability (Non-Technical)</div>
+        <div class="topic-list">
+            <div class="topic-card">
+                <h3 class="topic-header">1. Pedagogy & Mental Ability</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Pedagogy:</strong> Teaching-Learning Process, Instructional Objectives, Evaluation, Computer-Assisted Instruction (CAI), and specific Teaching Methods for Computer Science.</li>
+                        <li><strong>Mental Ability:</strong> Logical Reasoning, Decision Making, Problem Solving, Data Interpretation (Class X Level).</li>
+                        <li><strong>Major IT Developments:</strong> Recent technological advancements and trends in the IT sector.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="subpart-header">Part B: Professional Technical Knowledge (Core Syllabus)</div>
+        <div class="topic-list">
+            
+            <div class="topic-card">
+                <h3 class="topic-header">1. Fundamentals of Computer</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Overview:</strong> Evolution/Generations, Classification (Micro, Mini, Mainframe, Super).</li>
+                        <li><strong>Hardware:</strong> CPU block diagram, ALU, CU, Registers.</li>
+                        <li><strong>I/O Devices:</strong> Keyboards, Mouse, Scanners, Printers (Impact/Non-Impact), Plotters.</li>
+                        <li><strong>Memory:</strong> Primary (RAM/ROM), Secondary (HDD, SSD, Optical), Cache Memory, Memory Hierarchy.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">2. Data Processing (Office Automation)</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>MS Word:</strong> Mail merge, formatting, macros, bookmark, referencing.</li>
+                        <li><strong>MS Excel:</strong> Formulas (VLOOKUP, HLOOKUP, IF, Pivot Tables), Charts, Data validation.</li>
+                        <li><strong>MS PowerPoint:</strong> Slide master, animation, transitions, custom shows.</li>
+                        <li><strong>MS Access:</strong> Basics of database creation, forms, and reports.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">3. Programming Fundamentals</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Languages:</strong> C, C++, Java, .NET, Python.</li>
+                        <li><strong>Concepts:</strong> Data Types, Variables, Scope, Constants, Operators, Control Flow (if-else, loops), Functions, Arrays, Pointers, Structures.</li>
+                        <li><strong>Advanced Tech:</strong> Introduction to <mark>AI</mark> (Artificial Intelligence), Machine Learning, and Blockchain.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">4. Data Structures & Algorithms (DSA)</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Linear Data Structures:</strong> Arrays, Linked Lists, Stacks, Queues (FIFO).</li>
+                        <li><strong>Non-Linear:</strong> Trees (Binary Trees, BST, Traversal), Graphs (Adjacency Matrix/List, BFS/DFS).</li>
+                        <li><strong>Algorithms:</strong> Sorting (Bubble, Selection, Insertion, Quick, Merge) running in O(n log<sub>2</sub>n) or O(n<sup>2</sup>), Searching (Linear, Binary).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">5. Computer Organization & OS</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>COA:</strong> Von Neumann Architecture, Instruction Formats, Addressing Modes, Bus Structure.</li>
+                        <li><strong>Operating Systems:</strong> Process Management (FCFS, SJN, Round Robin), Deadlocks, Memory Management (Paging, Virtual Memory), File Systems.</li>
+                        <li><strong>Linux:</strong> Basic commands and shell scripting.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">6. Communication & Network Concepts</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Basics:</strong> Simplex/Duplex, Bandwidth, Analog vs. Digital.</li>
+                        <li><strong>Models:</strong> OSI Model vs. TCP/IP Model.</li>
+                        <li><strong>Networking:</strong> LAN, MAN, WAN, Topologies.</li>
+                        <li><strong>Devices & Protocols:</strong> Switch, Router, TCP, UDP, IPv<sub>4</sub>/IPv<sub>6</sub>, HTTP, FTP, DNS.</li>
+                        <li><strong>Mobile Comm:</strong> GSM, CDMA, 3G, 4G, 5G.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">7. Network Security</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Threats:</strong> Viruses, Worms, Trojan Horses, Malware, Phishing.</li>
+                        <li><strong>Protection:</strong> Firewalls, Antivirus, CIA Triad.</li>
+                        <li><strong>Cryptography:</strong> Symmetric (DES, AES) vs. Asymmetric (RSA), Digital Signatures, PKI, Hashing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">8. Database Management System (DBMS)</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Architecture & Modeling:</strong> 3-Tier Architecture, E-R Diagrams.</li>
+                        <li><strong>Relational Model:</strong> Normalization (1NF, 2NF, 3NF, BCNF).</li>
+                        <li><strong>SQL:</strong> DDL, DML, DCL commands, Joins, Aggregation.</li>
+                        <li><strong>Concurrency:</strong> ACID properties, Transaction states, Locking protocols.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">9. System Analysis & Design</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>SDLC Models:</strong> Waterfall, Spiral, Agile.</li>
+                        <li><strong>Analysis & Design:</strong> Feasibility Study, SRS, DFD, Flowcharts, UML.</li>
+                        <li><strong>Testing:</strong> Black Box vs. White Box, Unit, Integration, System Testing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-header">10. Internet of Things (IoT) & Web Tech</h3>
+                <div class="topic-body">
+                    <ul>
+                        <li><strong>Web Tech:</strong> HTML (Tags, Forms, Tables), CSS (Selectors, Box Model), XML basics.</li>
+                        <li><strong>IoT:</strong> Introduction, Sensors, Actuators, Smart Applications (Smart City, Home Automation).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script>
+    // Theme Toggle Logic
+    const themeBtn = document.getElementById('theme-btn');
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+    });
+</script>
+
+</body>
+</html>
